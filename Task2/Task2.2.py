@@ -2,7 +2,11 @@ from functools import partial
 
 
 def specialize(func, *args, **kwargs):
-    return partial(func, *args, **kwargs)
+    def ans(*arg, **kwarg):
+        newkwargs = {**kwargs, **kwarg}
+        return func(*args, *arg, **newkwargs)
+
+    return ans
 
 
 def sum(x, y):
