@@ -1,13 +1,10 @@
 def flatten(arr, depth=-1):
     ans = []
     for i in arr:
-        if type(i) != list:
-            ans.append(i)
+        if type(i) == list and depth != 0:
+            ans += flatten(i, depth - 1)
         else:
-            if depth != 0:
-                ans += flatten(i, depth - 1)
-            else:
-                ans.append(i)
+            ans.append(i)
     return ans
 
 
