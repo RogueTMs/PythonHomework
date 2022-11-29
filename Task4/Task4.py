@@ -11,10 +11,11 @@ def deprecated(f=None, *, since=None, will_be_removed=None):
             s += f" since version {since}."
         else:
             s += "."
+        s += ' It will be removed in '
         if will_be_removed:
-            s += f" It will be removed in version {will_be_removed}"
+            s += f"version {will_be_removed}"
         else:
-            s += " It will be removed in future versions"
+            s += "future versions"
 
         print(s)
 
