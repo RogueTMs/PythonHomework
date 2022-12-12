@@ -21,4 +21,4 @@ def format_table(benchmarks, algos, results):
 
 format_table(["baaaaaaaaaaaaaaaaaaaaaaaa", "w"],
              ["quick sort", "merge sort", "bubble sort"],
-             [[1111.23, 1.56, 2.0], [3.3, 2.9, 3.9]])
+             [[11.23, 1.56, 2.0], [3.3, 2.9, 3.9]])
