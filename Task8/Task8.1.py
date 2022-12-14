@@ -1,19 +1,9 @@
-from numpy import take
-import itertools
-
-
 def cycle(itr):
-    cur = 0
-
-    def step():
-        nonlocal cur
-        res = itr[cur]
-        cur += 1
-        if cur == len(itr):
-            cur = 0
-        return res
-
-    return iter(step, None)
+    while True:
+        yield from itr
 
 
-print(take(itertools.cycle([1, 2, 3]), 10))
+test = cycle([1, 2, 3])
+
+for i in test:
+    print(i)
