@@ -3,12 +3,9 @@ def emptyinit(self):
 
 
 class Singleton:
-    new = False
-
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, 'exist'):
             cls.exist = super().__new__(cls, *args, **kwargs)
-            Singleton.new = True
         else:
             cls.__init__ = emptyinit
         return cls.exist
@@ -16,11 +13,12 @@ class Singleton:
 
 class Counter:
     def __init__(self):
-        print('Hello')
+        print('Hello from counter')
 
 
 class GlobalCounter(Singleton, Counter):
-    pass
+    def __init__(self):
+        print("Hello from GC")
 
 
 gc1 = GlobalCounter()
